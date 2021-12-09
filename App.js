@@ -2,27 +2,21 @@ import * as React from 'react';
 import { Button, View } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
+import Nissan from "./Nissan";
+import Toyota from "./Toyota";
 
 
 
 
-
-function Nissan({ navigation }) {
+function Nissanlap({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button
-        onPress={() => navigation.navigate('Toyota')}
-        title="Toyota"
-      />
-    </View>
+   <Nissan />
   );
 }
 
-function Toyota({ navigation }) {
+function Toyotalap({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button onPress={() => navigation.goBack()} title="Nissan" />
-    </View>
+    <Toyota />
   );
 }
 
@@ -32,8 +26,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Nissan">
-        <Drawer.Screen name="Nissan" component={Nissan} />
-        <Drawer.Screen name="Toyota" component={Toyota} />
+        <Drawer.Screen name="Nissan" component={Nissanlap} />
+        <Drawer.Screen name="Toyota" component={Toyotalap} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
